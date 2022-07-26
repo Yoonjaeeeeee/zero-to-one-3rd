@@ -2,36 +2,34 @@ package main
 
 import "fmt"
 
-// var height int = 9
+/*
+    *
+   ***
+  *****
+ *******
+*********
 
-/* func main() {
-	for i := 0; i < 3; i++ {
-		for k := 0; k <= 1-i; k++ {
-			fmt.Print(" ")
-		}
-		for j := 0; j <= 2*i; j++ {
-			fmt.Print("*")
-		}
-		fmt.Println()
-	}
-}
+2 * i + 1
 
+4개의 층을 쌓아야 함
+첫 번째는 공백으로 시작해야한다.
+마지막 공백은 4개 (층이 5개일 때)
+ *******
+  *****
+   ***
+    *
 */
 
 func main() {
-	for i := 0; i < 5; i++ {
-		for j := 0; j < 1+i; j++ {
+	height := 4
+	for i := 0; i < height; i++ {
+		// i == 현재 층 (0층부터 4층까지)
+		for j := height - i - 1; j > 0; j-- {
+			fmt.Print(" ")
+		}
+		for k := 0; k < 2*i+1; k++ {
 			fmt.Print("*")
 		}
 		fmt.Println()
-
-	}
-
-	for i := 0; i < 5; i++ {
-		for j := 0; j < 5-i; j++ {
-			fmt.Print("*")
-		}
-		fmt.Println()
-
 	}
 }
